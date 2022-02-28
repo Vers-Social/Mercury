@@ -6,6 +6,10 @@ let transmitButton = document.querySelector("#transmitButton");
 let span = document.querySelector("span");
 
 transmitButton.onclick = function() {
+    let turbo = false;
+    if (confirm("Would you like to enable turbo? You can transmit data 10 times faster but it's more prone to errors. Hit OK to enable turbo, or hit Cancel to start a normal transmission.") == true) {
+        turbo = true;
+    }
     let message = prompt("Please enter a message", "");
     let text;
     if (message !== null && message !== "") {
@@ -45,7 +49,11 @@ transmitButton.onclick = function() {
                     textValue = `${i+1}/${payloadCount}: ` + value;
                 }
                 qrCode.makeCode(textValue);
-                await sleep(500);
+                if (!turbo) {
+                    await sleep(1000);
+                } else {
+                    await sleep(100);
+                }
                 i++;
             }
             span.innerHTML = `<button type="button" onclick="window.location = 'transmitter.html'">new transmission</button>`;

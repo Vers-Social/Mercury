@@ -51,6 +51,14 @@ input[type=file] {
     display: none !important;
 }
 
+.message {
+    border: 2px solid #995fa3;
+    border-radius: 20px 20px 20px 0px;
+    color: #995fa3;
+    padding: 20px 40px;
+    font-size: 24px;
+}
+
 button {
     display: inline-block;
     white-space: nowrap;

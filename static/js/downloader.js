@@ -90,7 +90,7 @@ async function snapshot() {
                 }
                 console.log(JSON.stringify(newDownloadedData));
                 let decryptedCipher = decryptPayload(newDownloadedData.join(""), secretKey);
-                span.innerHTML = `<h2>${decryptedCipher}</h2>`;
+                span.innerHTML = `<div class="message">Message Downloaded: ${decryptedCipher}</div>`;
                 downloadedData = [];
                 lastCode = "";
                 finishedDownloading = true;
