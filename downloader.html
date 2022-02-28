@@ -8,12 +8,11 @@
 		<link href="static/css/app.css" rel="stylesheet">
 	</head>
 	<body>
-        <form>
-            <main>
-                <video id="video" playsinline autoplay muted></video>
-                <p><button type="button" class="button" onclick="startRecording()" id="webcamButton">download</button></p>
-                </main>
-        </form>
+        <main>
+            <span></span>
+            <video id="video" playsinline autoplay muted></video>
+            <p><button type="button" class="button" onclick="startRecording()" id="webcamButton">start download</button></p>
+        </main>
         <canvas id="myCanvas"></canvas>
         <a href="index.html"><img id="logo" src="static/images/logo_purple.png"></a>
 		<script src="static/js/libraries/jsQR.js"></script>

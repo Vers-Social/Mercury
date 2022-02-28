@@ -16,12 +16,21 @@ body {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
+    text-align: center;
 }
 
 main {
     width: 80%;
     margin: 0 auto;
     margin-top: 40px;
+}
+
+main img {
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto;
+    margin-bottom: 40px;
 }
 
 #logo {
@@ -31,11 +40,7 @@ main {
     bottom: 20px;
 }
 
-main img {
-    width: 400px;
-    max-width: 100%;
-    margin: 0 auto;
-    height: auto;
+#center {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -44,13 +49,6 @@ main img {
 
 input[type=file] {
     display: none !important;
-}
-
-main {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 button {

@@ -3,6 +3,7 @@ const secretKey = "F56Pw5RhKEPuKsnn";
 let main = document.querySelector("main");
 let qrArea = document.querySelector("main #qrArea");
 let transmitButton = document.querySelector("#transmitButton");
+let span = document.querySelector("span");
 
 transmitButton.onclick = function() {
     let message = prompt("Please enter a message", "");
@@ -16,8 +17,8 @@ transmitButton.onclick = function() {
         let payloadArray = [];
 
         // Multiple Payloads Required
-        if (cipherText.toString().length > 100) {
-            payloadArray = chunkString(cipherText.toString(), 100);
+        if (cipherText.toString().length > 10) {
+            payloadArray = chunkString(cipherText.toString(), 10);
             payloadCount = payloadArray.length;
         } else {
             payloadArray.push(cipherText.toString());
@@ -44,9 +45,10 @@ transmitButton.onclick = function() {
                     textValue = `${i+1}/${payloadCount}: ` + value;
                 }
                 qrCode.makeCode(textValue);
-                await sleep(2000);
+                await sleep(500);
                 i++;
             }
+            span.innerHTML = `<button type="button" onclick="window.location = 'transmitter.html'">new transmission</button>`;
         }
 
         loopThroughPayload();
